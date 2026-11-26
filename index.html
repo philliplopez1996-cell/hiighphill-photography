@@ -11,7 +11,7 @@
 <meta property="og:type" content="website" />
 <link rel="icon" href="favicon.svg" type="image/svg+xml" />
 <link rel="apple-touch-icon" href="apple-touch-icon.png" />
-<link rel="preload" as="image" href="img/gallery-19-atlanta-aerial-2000.webp" fetchpriority="high" />
+<link rel="preload" as="image" href="img/gallery-18-atlanta-highways-2000.webp" imagesrcset="img/gallery-18-atlanta-highways-1600.webp 1600w, img/gallery-18-atlanta-highways-2000.webp 2000w" imagesizes="100vw" fetchpriority="high" />
 <link rel="preload" as="font" type="font/woff2" href="fonts/outfit-600.woff2" crossorigin />
 <link rel="preload" as="font" type="font/woff2" href="fonts/dmsans-400.woff2" crossorigin />
 <style>
@@ -842,6 +842,23 @@ body.is-loaded .hero-sub .w{opacity:1;translate:0 0}
   .book-cta{translate:none;transition:opacity .2s}
 }
 </style>
+<style id="hero-v5">
+/* v5: slogan-only hero over the Highways photo */
+.hero-img{object-position:36% 50%}
+.hero-center{display:flex;align-items:flex-end;justify-content:flex-start;text-align:left;padding:0 clamp(1.25rem,5vw,4.5rem) clamp(3.2rem,11svh,7.5rem)}
+.hero-slogan{margin:0;max-width:13ch;font-family:var(--display);font-weight:600;font-size:clamp(2.75rem,12.6vw,7.4rem);line-height:1.0;letter-spacing:-.035em;color:#fff;text-wrap:balance;text-shadow:0 2px 6px rgba(0,0,0,.35),0 10px 44px rgba(0,0,0,.45);translate:0 var(--h-y,0);opacity:var(--h-o,1)}
+@media (min-width:821px){.hero-slogan{max-width:15ch;font-size:clamp(4rem,6.4vw,7.4rem)}}
+.hero-slogan .w{display:inline-block;opacity:0;translate:0 .45em;transition:opacity .8s var(--ease) calc(.35s + var(--w)*.11s),translate 1.05s var(--ease) calc(.35s + var(--w)*.11s)}
+body.is-loaded .hero-slogan .w{opacity:1;translate:0 0}
+/* contrast scrim under the text (the sky in this photo is bright) */
+.hero-stage::after{content:'';position:absolute;inset:0;pointer-events:none;z-index:1;background:linear-gradient(to top,rgba(5,5,7,.86) 0%,rgba(5,5,7,.62) 34%,rgba(5,5,7,.18) 62%,rgba(5,5,7,0) 78%),linear-gradient(to right,rgba(5,5,7,.35),rgba(5,5,7,0) 60%)}
+/* no other hero text */
+.hero .scroll-cue,.hero .hero-meta{display:none}
+/* section counter: hidden on the hero and on phones (each section already shows 02/05 etc.) */
+.sticky-counter:not(.on-sheet){opacity:0!important;pointer-events:none}
+@media (max-width:820px){.sticky-counter{display:none!important}}
+@media (prefers-reduced-motion: reduce){.hero-slogan .w{opacity:1;translate:none;transition:none}.hero-slogan{translate:none;opacity:1}}
+</style>
 </head>
 <body>
 <div class="progress-line" aria-hidden="true"></div>
@@ -866,24 +883,14 @@ body.is-loaded .hero-sub .w{opacity:1;translate:0 0}
 
 <section class="hero" id="home" data-section-index="1">
   <div class="hero-stage">
-    <div class="hero-plane"><div class="hero-bg" style="background-image:url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAA4KCw0LCQ4NDA0QDw4RFiQXFhQUFiwgIRokNC43NjMuMjI6QVNGOj1OPjIySGJJTlZYXV5dOEVmbWVabFNbXVn/2wBDAQ8QEBYTFioXFypZOzI7WVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVn/wAARCAAYACADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwDQufJi8pnIIY4/dgkc9vpUE0iqHYttRSQQRkcY6fnWfe6oYGdI1CkoCHYZ2HPGR6VNpDy6hpWos26K7t4tuRxkHkH8aEna4dQZBiQTKS6YBUdccYI98Gs2WVeAoPTnIq5cXXnXxsbeWISbAd+08yA9u/vVW6iZ3LbBuJIZU52MDg/gaLhYZBeyXVvcpM8KOVKEHgkfjVXTL14mltn4MmwMQfvBen86KKH1BdDVWAS3FndqkYZXwWY9cg4z+n51P5JaWGZ8hLhiku1c/OOVxk459fwooqUNn//Z)"><img class="hero-img" src="img/gallery-19-atlanta-aerial-2000.webp" width="2000" height="1500" fetchpriority="high" decoding="async" alt="Aerial view over downtown Atlanta towers" /></div></div>
+    <div class="hero-plane"><div class="hero-bg" style="background-image:url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAA0JCgsKCA0LCgsODg0PEyAVExISEyccHhcgLikxMC4pLSwzOko+MzZGNywtQFdBRkxOUlNSMj5aYVpQYEpRUk//2wBDAQ4ODhMREyYVFSZPNS01T09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0//wAARCAAYACADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwDur1UgtpZ2GRGhYgdTgVQDW80UbiRFMkYkCk84rhdX1i5lvPNnkO5l2swHSs9NWeKYFJtrcjJ4IOKqM2iZUkz0l7E/3ai+wH0rj4vFV+oHmXQYZAyOucY/KrUHiy8eQh5lwoyzDAFX7aSM/q0WY9pbEpcSagxt4osYbYPnx6E9TxUMdvbareyi2RYLdVHT7x9zRRXHe6udti4ht7W3htXiKLcuwKsMsBg4z79D+NZV1A9jdeW6KUZcBgOq+tFFTfULaH//2Q==)"><img class="hero-img" src="img/gallery-18-atlanta-highways-2000.webp" srcset="img/gallery-18-atlanta-highways-1600.webp 1600w, img/gallery-18-atlanta-highways-2000.webp 2000w" sizes="100vw" width="2000" height="1500" fetchpriority="high" decoding="async" alt="Atlanta skyline with highways leading into downtown" /></div></div>
     <div class="hero-haze"></div>
     <div class="hero-vignette"></div>
     <div class="hero-dim"></div>
     <div class="hero-grain" aria-hidden="true"></div>
   </div>
   <div class="hero-center">
-    <div>
-      <h1 class="hero-headline" aria-label="Fearless."><span class="hl" aria-hidden="true"><span class="ch" style="--i:0">F</span><span class="ch" style="--i:1">e</span><span class="ch" style="--i:2">a</span><span class="ch" style="--i:3">r</span><span class="ch" style="--i:4">l</span><span class="ch" style="--i:5">e</span><span class="ch" style="--i:6">s</span><span class="ch" style="--i:7">s</span><span class="ch hl-dot" style="--i:8">.</span></span></h1>
-      <p class="hero-sub"><span class="sub-in"><span class="w" style="--w:0">Stay</span> <span class="w acc" style="--w:1">fearless</span> <span class="w" style="--w:2">&amp;</span> <span class="w" style="--w:3">live</span> <span class="w" style="--w:4">life</span> <span class="w" style="--w:5">in</span> <span class="w" style="--w:6">the</span> <span class="w" style="--w:7">moment,</span> <span class="w" style="--w:8">my</span> <span class="w" style="--w:9">dear</span> <span class="w" style="--w:10">friends.</span></span></p>
-    </div>
-  </div>
-  <div class="scroll-cue" aria-hidden="true"><span>Scroll</span><span class="line"></span></div>
-  <div class="hero-meta">
-    <div class="hero-social">
-      <a href="https://www.instagram.com/hiighphill.base.eth/?hl=en" target="_blank" rel="noopener">Instagram</a>
-      <a href="https://opensea.io/collection/hiighphill" target="_blank" rel="noopener">OpenSea</a>
-    </div>
+    <h1 class="hero-slogan"><span class="w" style="--w:0">Stay</span> <span class="w" style="--w:1">fearless</span> <span class="w" style="--w:2">&amp;</span> <span class="w" style="--w:3">live</span> <span class="w" style="--w:4">life</span> <span class="w" style="--w:5">in</span> <span class="w" style="--w:6">the</span> <span class="w" style="--w:7">moment,</span> <span class="w" style="--w:8">my</span> <span class="w" style="--w:9">dear</span> <span class="w" style="--w:10">friends.</span></h1>
   </div>
 </section>
 <div class="hero-hold" aria-hidden="true"></div>
@@ -896,28 +903,28 @@ body.is-loaded .hero-sub .w{opacity:1;translate:0 0}
       <p class="section-copy">Horizontal editorial frames from Atlanta nights, transit yards, and quiet nature studies — built to read like a print portfolio on a pitch-black canvas.</p>
     </div>
     <div class="work-grid distort-target">
-      <article class="work-card reveal"><img class="media" src="img/gallery-01-bridge-500.webp" srcset="img/gallery-01-bridge-500.webp 500w" sizes="(max-width: 820px) 92vw, 580px" width="500" height="500" loading="lazy" decoding="async" alt="Wooden suspension footbridge through a dense green forest" /><div class="caption" aria-hidden="true"><span><span class="no">01</span>Bridge Study</span><span>View</span></div><button class="work-open" type="button" data-work-index="0" aria-label="Open Bridge Study full size"></button></article>
-      <article class="work-card reveal"><img class="media" src="img/gallery-03-trains-blue-500.webp" srcset="img/gallery-03-trains-blue-500.webp 500w" sizes="(max-width: 820px) 92vw, 580px" width="500" height="500" loading="lazy" decoding="async" alt="Rows of trains in a rail yard from above, tinted electric blue" /><div class="caption" aria-hidden="true"><span><span class="no">02</span>Blue Trains</span><span>View</span></div><button class="work-open" type="button" data-work-index="1" aria-label="Open Blue Trains full size"></button></article>
-      <article class="work-card wide reveal"><img class="media" src="img/gallery-06-atlanta-night-500.webp" srcset="img/gallery-06-atlanta-night-500.webp 500w" sizes="(max-width: 820px) 92vw, 1180px" width="500" height="370" loading="lazy" decoding="async" alt="Person with a backpack looking out at a lit Ferris wheel and skyline at dusk" /><div class="caption" aria-hidden="true"><span><span class="no">03</span>Atlanta Night</span><span>View</span></div><button class="work-open" type="button" data-work-index="2" aria-label="Open Atlanta Night full size"></button></article>
-      <article class="work-card reveal"><img class="media" src="img/gallery-04-building-500.webp" srcset="img/gallery-04-building-500.webp 500w" sizes="(max-width: 820px) 92vw, 580px" width="500" height="500" loading="lazy" decoding="async" alt="Glass office tower shot looking up, bent into a curved, mirrored facade" /><div class="caption" aria-hidden="true"><span><span class="no">04</span>Facade</span><span>View</span></div><button class="work-open" type="button" data-work-index="3" aria-label="Open Facade full size"></button></article>
-      <article class="work-card reveal"><img class="media" src="img/gallery-05-tracks-500.webp" srcset="img/gallery-05-tracks-500.webp 500w" sizes="(max-width: 820px) 92vw, 580px" width="500" height="421" loading="lazy" decoding="async" alt="Rail tracks and a puddle reflection in vivid purple and orange false color" /><div class="caption" aria-hidden="true"><span><span class="no">05</span>Tracks</span><span>View</span></div><button class="work-open" type="button" data-work-index="4" aria-label="Open Tracks full size"></button></article>
-      <article class="work-card reveal"><img class="media" src="img/gallery-09-foggy-trees-800.webp" srcset="img/gallery-09-foggy-trees-800.webp 800w, img/gallery-09-foggy-trees-1582.webp 1582w" sizes="(max-width: 820px) 92vw, 580px" width="800" height="1011" loading="lazy" decoding="async" alt="Bare trees fading into dark fog" /><div class="caption" aria-hidden="true"><span><span class="no">06</span>Fog Line</span><span>View</span></div><button class="work-open" type="button" data-work-index="5" aria-label="Open Fog Line full size"></button></article>
-      <article class="work-card reveal"><img class="media" src="img/gallery-18-atlanta-highways-800.webp" srcset="img/gallery-18-atlanta-highways-800.webp 800w, img/gallery-18-atlanta-highways-1600.webp 1600w" sizes="(max-width: 820px) 92vw, 580px" width="800" height="600" loading="lazy" decoding="async" alt="Atlanta skyline with highways leading into downtown" /><div class="caption" aria-hidden="true"><span><span class="no">07</span>Highways</span><span>View</span></div><button class="work-open" type="button" data-work-index="6" aria-label="Open Highways full size"></button></article>
+      <article class="work-card reveal"><img class="media" src="img/gallery-01-bridge-500.webp" srcset="img/gallery-01-bridge-500.webp 500w" sizes="(max-width: 820px) 92vw, 580px" width="500" height="500" loading="lazy" decoding="async" alt="Wooden suspension footbridge through a dense green forest" /><div class="caption" aria-hidden="true"><span><span class="no">01</span></span><span>View</span></div><button class="work-open" type="button" data-work-index="0" aria-label="Open photo 1 full size"></button></article>
+      <article class="work-card reveal"><img class="media" src="img/gallery-03-trains-blue-500.webp" srcset="img/gallery-03-trains-blue-500.webp 500w" sizes="(max-width: 820px) 92vw, 580px" width="500" height="500" loading="lazy" decoding="async" alt="Rows of trains in a rail yard from above, tinted electric blue" /><div class="caption" aria-hidden="true"><span><span class="no">02</span></span><span>View</span></div><button class="work-open" type="button" data-work-index="1" aria-label="Open photo 2 full size"></button></article>
+      <article class="work-card wide reveal"><img class="media" src="img/gallery-06-atlanta-night-500.webp" srcset="img/gallery-06-atlanta-night-500.webp 500w" sizes="(max-width: 820px) 92vw, 1180px" width="500" height="370" loading="lazy" decoding="async" alt="Person with a backpack looking out at a lit Ferris wheel and skyline at dusk" /><div class="caption" aria-hidden="true"><span><span class="no">03</span></span><span>View</span></div><button class="work-open" type="button" data-work-index="2" aria-label="Open photo 3 full size"></button></article>
+      <article class="work-card reveal"><img class="media" src="img/gallery-04-building-500.webp" srcset="img/gallery-04-building-500.webp 500w" sizes="(max-width: 820px) 92vw, 580px" width="500" height="500" loading="lazy" decoding="async" alt="Glass office tower shot looking up, bent into a curved, mirrored facade" /><div class="caption" aria-hidden="true"><span><span class="no">04</span></span><span>View</span></div><button class="work-open" type="button" data-work-index="3" aria-label="Open photo 4 full size"></button></article>
+      <article class="work-card reveal"><img class="media" src="img/gallery-05-tracks-500.webp" srcset="img/gallery-05-tracks-500.webp 500w" sizes="(max-width: 820px) 92vw, 580px" width="500" height="421" loading="lazy" decoding="async" alt="Rail tracks and a puddle reflection in vivid purple and orange false color" /><div class="caption" aria-hidden="true"><span><span class="no">05</span></span><span>View</span></div><button class="work-open" type="button" data-work-index="4" aria-label="Open photo 5 full size"></button></article>
+      <article class="work-card reveal"><img class="media" src="img/gallery-09-foggy-trees-800.webp" srcset="img/gallery-09-foggy-trees-800.webp 800w, img/gallery-09-foggy-trees-1582.webp 1582w" sizes="(max-width: 820px) 92vw, 580px" width="800" height="1011" loading="lazy" decoding="async" alt="Bare trees fading into dark fog" /><div class="caption" aria-hidden="true"><span><span class="no">06</span></span><span>View</span></div><button class="work-open" type="button" data-work-index="5" aria-label="Open photo 6 full size"></button></article>
+      <article class="work-card reveal"><img class="media" src="img/gallery-18-atlanta-highways-800.webp" srcset="img/gallery-18-atlanta-highways-800.webp 800w, img/gallery-18-atlanta-highways-1600.webp 1600w" sizes="(max-width: 820px) 92vw, 580px" width="800" height="600" loading="lazy" decoding="async" alt="Atlanta skyline with highways leading into downtown" /><div class="caption" aria-hidden="true"><span><span class="no">07</span></span><span>View</span></div><button class="work-open" type="button" data-work-index="6" aria-label="Open photo 7 full size"></button></article>
     </div>
   
     <div class="film" aria-label="More frames, horizontal gallery">
       <div class="film-pin">
         <div class="film-head"><h3>More frames.</h3><span>Keep scrolling &rarr;</span></div>
         <div class="film-track">
-          <figure class="film-item" data-key="gallery-10-branches-bw.jpg" data-title="Branches"><img src="img/film-10-branches-bw.webp" width="640" height="853" loading="lazy" decoding="async" alt="Black-and-white bare branches against a pale sky" /><figcaption><span class="no">08</span>Branches</figcaption><button class="film-open" type="button" data-film-index="0" aria-label="Open Branches full size"></button></figure>
-          <figure class="film-item" data-key="gallery-11-leaf-sun.jpg" data-title="Leaf Light"><img src="img/film-11-leaf-sun.webp" width="640" height="960" loading="lazy" decoding="async" alt="Sun shining through a green leaf" /><figcaption><span class="no">09</span>Leaf Light</figcaption><button class="film-open" type="button" data-film-index="1" aria-label="Open Leaf Light full size"></button></figure>
-          <figure class="film-item" data-key="gallery-12-sky-fisheye.jpg" data-title="Octagon Sky"><img src="img/film-12-sky-fisheye.webp" width="760" height="720" loading="lazy" decoding="async" alt="Blue sky and bare branches seen through an octagonal opening" /><figcaption><span class="no">10</span>Octagon Sky</figcaption><button class="film-open" type="button" data-film-index="2" aria-label="Open Octagon Sky full size"></button></figure>
-          <figure class="film-item" data-key="gallery-13-basketball-bw.jpg" data-title="Courtside"><img src="img/film-13-basketball-bw.webp" width="760" height="720" loading="lazy" decoding="async" alt="Black-and-white basketball hoop under a tree canopy, seen from below" /><figcaption><span class="no">11</span>Courtside</figcaption><button class="film-open" type="button" data-film-index="3" aria-label="Open Courtside full size"></button></figure>
-          <figure class="film-item" data-key="gallery-15-train-yard.jpg" data-title="Rail Yard"><img src="img/film-15-train-yard.webp" width="760" height="720" loading="lazy" decoding="async" alt="Aerial view of freight trains lined up in a rail yard" /><figcaption><span class="no">12</span>Rail Yard</figcaption><button class="film-open" type="button" data-film-index="4" aria-label="Open Rail Yard full size"></button></figure>
-          <figure class="film-item" data-key="gallery-16-snowy-valley.jpg" data-title="Snow Valley"><img src="img/film-16-snowy-valley.webp" width="760" height="720" loading="lazy" decoding="async" alt="Snowy forested valley and mountains under a grey sky" /><figcaption><span class="no">13</span>Snow Valley</figcaption><button class="film-open" type="button" data-film-index="5" aria-label="Open Snow Valley full size"></button></figure>
-          <figure class="film-item" data-key="gallery-20-atlanta-cranes.jpg" data-title="Downtown Haze"><img src="img/film-20-atlanta-cranes.webp" width="760" height="720" loading="lazy" decoding="async" alt="Downtown Atlanta tower and skyline under a hazy sky" /><figcaption><span class="no">14</span>Downtown Haze</figcaption><button class="film-open" type="button" data-film-index="6" aria-label="Open Downtown Haze full size"></button></figure>
-          <figure class="film-item" data-key="gallery-21-atlanta-rooftop.jpg" data-title="Rooftop"><img src="img/film-21-atlanta-rooftop.webp" width="760" height="720" loading="lazy" decoding="async" alt="Ornate rooftop of a downtown Atlanta tower seen from above" /><figcaption><span class="no">15</span>Rooftop</figcaption><button class="film-open" type="button" data-film-index="7" aria-label="Open Rooftop full size"></button></figure>
-          <figure class="film-item" data-key="gallery-23-atlanta-park.jpg" data-title="Park Side"><img src="img/film-23-atlanta-park.webp" width="760" height="720" loading="lazy" decoding="async" alt="Atlanta high-rises beside a green park on a clear day" /><figcaption><span class="no">16</span>Park Side</figcaption><button class="film-open" type="button" data-film-index="8" aria-label="Open Park Side full size"></button></figure>
+          <figure class="film-item" data-key="gallery-10-branches-bw.jpg"><img src="img/film-10-branches-bw.webp" width="640" height="853" loading="lazy" decoding="async" alt="Black-and-white bare branches against a pale sky" /><figcaption><span class="no">08</span></figcaption><button class="film-open" type="button" data-film-index="0" aria-label="Open photo 8 full size"></button></figure>
+          <figure class="film-item" data-key="gallery-11-leaf-sun.jpg"><img src="img/film-11-leaf-sun.webp" width="640" height="960" loading="lazy" decoding="async" alt="Sun shining through a green leaf" /><figcaption><span class="no">09</span></figcaption><button class="film-open" type="button" data-film-index="1" aria-label="Open photo 9 full size"></button></figure>
+          <figure class="film-item" data-key="gallery-12-sky-fisheye.jpg"><img src="img/film-12-sky-fisheye.webp" width="760" height="720" loading="lazy" decoding="async" alt="Blue sky and bare branches seen through an octagonal opening" /><figcaption><span class="no">10</span></figcaption><button class="film-open" type="button" data-film-index="2" aria-label="Open photo 10 full size"></button></figure>
+          <figure class="film-item" data-key="gallery-13-basketball-bw.jpg"><img src="img/film-13-basketball-bw.webp" width="760" height="720" loading="lazy" decoding="async" alt="Black-and-white basketball hoop under a tree canopy, seen from below" /><figcaption><span class="no">11</span></figcaption><button class="film-open" type="button" data-film-index="3" aria-label="Open photo 11 full size"></button></figure>
+          <figure class="film-item" data-key="gallery-15-train-yard.jpg"><img src="img/film-15-train-yard.webp" width="760" height="720" loading="lazy" decoding="async" alt="Aerial view of freight trains lined up in a rail yard" /><figcaption><span class="no">12</span></figcaption><button class="film-open" type="button" data-film-index="4" aria-label="Open photo 12 full size"></button></figure>
+          <figure class="film-item" data-key="gallery-16-snowy-valley.jpg"><img src="img/film-16-snowy-valley.webp" width="760" height="720" loading="lazy" decoding="async" alt="Snowy forested valley and mountains under a grey sky" /><figcaption><span class="no">13</span></figcaption><button class="film-open" type="button" data-film-index="5" aria-label="Open photo 13 full size"></button></figure>
+          <figure class="film-item" data-key="gallery-20-atlanta-cranes.jpg"><img src="img/film-20-atlanta-cranes.webp" width="760" height="720" loading="lazy" decoding="async" alt="Downtown Atlanta tower and skyline under a hazy sky" /><figcaption><span class="no">14</span></figcaption><button class="film-open" type="button" data-film-index="6" aria-label="Open photo 14 full size"></button></figure>
+          <figure class="film-item" data-key="gallery-21-atlanta-rooftop.jpg"><img src="img/film-21-atlanta-rooftop.webp" width="760" height="720" loading="lazy" decoding="async" alt="Ornate rooftop of a downtown Atlanta tower seen from above" /><figcaption><span class="no">15</span></figcaption><button class="film-open" type="button" data-film-index="7" aria-label="Open photo 15 full size"></button></figure>
+          <figure class="film-item" data-key="gallery-23-atlanta-park.jpg"><img src="img/film-23-atlanta-park.webp" width="760" height="720" loading="lazy" decoding="async" alt="Atlanta high-rises beside a green park on a clear day" /><figcaption><span class="no">16</span></figcaption><button class="film-open" type="button" data-film-index="8" aria-label="Open photo 16 full size"></button></figure>
         </div>
         <div class="film-bar" aria-hidden="true"><i></i></div>
       </div>
@@ -1096,7 +1103,7 @@ const PHOTO_ALT = {
  "gallery-23-atlanta-park.jpg": "Atlanta high-rises beside a green park on a clear day",
  "gallery-24-atlanta-skyline.jpg": "Atlanta skyline under scattered clouds"
 };
-const WORK = [{"key": "gallery-01-bridge.jpg", "title": "Bridge Study"}, {"key": "gallery-03-trains-blue.jpg", "title": "Blue Trains"}, {"key": "gallery-06-atlanta-night.jpg", "title": "Atlanta Night"}, {"key": "gallery-04-building.jpg", "title": "Facade"}, {"key": "gallery-05-tracks.jpg", "title": "Tracks"}, {"key": "gallery-09-foggy-trees.jpg", "title": "Fog Line"}, {"key": "gallery-18-atlanta-highways.jpg", "title": "Highways"}];
+const WORK = [{"key": "gallery-01-bridge.jpg"}, {"key": "gallery-03-trains-blue.jpg"}, {"key": "gallery-06-atlanta-night.jpg"}, {"key": "gallery-04-building.jpg"}, {"key": "gallery-05-tracks.jpg"}, {"key": "gallery-09-foggy-trees.jpg"}, {"key": "gallery-18-atlanta-highways.jpg"}];
 
 /* Hero: swap the tiny blurred placeholder for the real photo as soon as it decodes */
 (function(){
@@ -1295,7 +1302,7 @@ function stepPreview(dir) { showPhoto(previewIdx + dir); }
 function openWork(i) {
   previewBaseTitle = 'Selected Work';
   previewPhotos = WORK.map(w => w.key);
-  previewTitles = WORK.map(w => w.title);
+  previewTitles = null;
   previewImg.hidden = false; previewSoon.hidden = true;
   previewPrev.hidden = false; previewNext.hidden = false;
   showPhoto(i);
@@ -1644,10 +1651,10 @@ document.addEventListener('keydown', e => {
   frame();
 
   /* film tiles open the lightbox */
-  const FILM = $$('.film-item').map(f => ({ key: f.dataset.key, title: f.dataset.title }));
+  const FILM = $$('.film-item').map(f => ({ key: f.dataset.key }));
   window.openFilm = function(i){
     previewBaseTitle = 'More frames';
-    previewPhotos = FILM.map(f => f.key); previewTitles = FILM.map(f => f.title);
+    previewPhotos = FILM.map(f => f.key); previewTitles = null;
     previewImg.hidden = false; previewSoon.hidden = true; previewPrev.hidden = false; previewNext.hidden = false;
     showPhoto(i); previewModal.showModal();
   };
@@ -1657,7 +1664,7 @@ document.addEventListener('keydown', e => {
   const NAME = 'lb-photo';
   function tileFor(key){
     const w = WORK.findIndex(o => o.key === key);
-    if (w >= 0 && previewTitles && previewBaseTitle === 'Selected Work') return document.querySelectorAll('.work-card img.media')[w];
+    if (w >= 0 && previewBaseTitle === 'Selected Work') return document.querySelectorAll('.work-card img.media')[w];
     const f = FILM.findIndex(o => o.key === key);
     if (f >= 0 && previewBaseTitle === 'More frames') return document.querySelectorAll('.film-item img')[f];
     return null;
